@@ -1,12 +1,17 @@
 import bisect
-from wst.lib.profile import Profiler
 import datetime
 import pandas
-from wst.lib.html import display_html
 from statistics import mean, median, stdev
 import scipy.stats as ss
 from itertools import combinations
 import numpy
+
+# This may need to be implemented in a more general way. I don't have much experience with different environments here.
+def display_html(html_content, metadata=None):
+    metadata = metadata or {}
+    from IPython.core.display import display_html
+    display_html(html_content, raw=True, metadata=metadata)
+
 
 def create_out_data_structure(num_entries, num_events):
 
